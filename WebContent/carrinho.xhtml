@@ -7,7 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-	<title>Login - JSF</title>
+	<title>Carrinho - JSF</title>
 </h:head>
 <h:body>
 	<h:form>
@@ -15,8 +15,23 @@
 			<f:selectItems value="#{carrinhoBean.produtosTodos}" var="produto"
 				itemLabel="#{produto.nome}" itemValue="#{produto.nome}" />
 		</h:selectManyCheckbox>
+		<h:selectOneMenu value="#{carrinhoBean.qtdItens}">
+			<f:selectItem itemLabel="0" itemValue="0"/>
+			<f:selectItem itemLabel="1" itemValue="1"/>
+			<f:selectItem itemLabel="2" itemValue="2"/>
+			<f:selectItem itemLabel="3" itemValue="3"/>
+			<f:selectItem itemLabel="4" itemValue="4"/>
+			<f:selectItem itemLabel="5" itemValue="5"/>
+		</h:selectOneMenu>
 
-		<h:commandButton action="#{carinhoBean.comprar}" value="OK" />
+
+		<h:selectOneRadio value="#{carrinhoBean.tipoPagamento}">
+			<f:selectItems value="#{carrinhoBean.formaPagamento}"
+				var="tipoPagamento" itemLabel="#{tipoPagamento.nome}"
+				itemValue="#{tipoPagamento.id}" />
+		</h:selectOneRadio>
+
+		<h:commandButton action="#{carrinhoBean.comprar}" value="OK" />
 	</h:form>
 </h:body>
 </html>

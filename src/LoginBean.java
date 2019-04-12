@@ -7,14 +7,17 @@ public class LoginBean {
 	private String senha;
 	private boolean termo;
 	
-	public void logar() {
+	public String logar() {
 		if("rafael".equals(getLogin()) && "1234".equals(getSenha())) {
 			System.out.println("Usuario logado: " + getLogin());
+			System.out.println("Manter: " + termo);
+			return "carrinho";
 		}else {
 			System.out.println("Usuario não autorizado!");
+			return "login";
 		}
 		
-		System.out.println("Manter: " + termo);
+		
 	}
 	
 	public LoginBean() {
