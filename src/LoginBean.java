@@ -1,4 +1,6 @@
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 public class LoginBean {
@@ -11,9 +13,13 @@ public class LoginBean {
 		if("rafael".equals(getLogin()) && "1234".equals(getSenha())) {
 			System.out.println("Usuario logado: " + getLogin());
 			System.out.println("Manter: " + termo);
-			return "carrinho";
+			return "carrinho?faces-redirect=true";
 		}else {
 			System.out.println("Usuario não autorizado!");
+			FacesMessage mensagem = new FacesMessage("Usuário inválido!");
+			FacesMessage mensagem2 = new FacesMessage("senha inválido!");
+			FacesContext.getCurrentInstance().addMessage( null , mensagem);
+			FacesContext.getCurrentInstance().addMessage( null , mensagem2);
 			return "login";
 		}
 		
