@@ -1,3 +1,5 @@
+import java.util.Calendar;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.component.UIComponent;
@@ -12,8 +14,14 @@ public class CadastroBean {
 	private String cpf;
 
 	private int idade;
+	
+	private int estrelas;
+	
+	private String dataNascimento;
 
 	public void validar() {
+		System.out.println("Estrelas: "+ estrelas);
+		System.out.println("DataNascimento: "+ dataNascimento);
 	}
 
 	public CadastroBean() {
@@ -25,6 +33,22 @@ public class CadastroBean {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
+	}
+	
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public int getEstrelas() {
+		return estrelas;
+	}
+
+	public void setEstrelas(int estrelas) {
+		this.estrelas = estrelas;
 	}
 
 	public String getNome() {

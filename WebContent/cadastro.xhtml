@@ -26,7 +26,7 @@
 				<p:messages for="nome" />
 				<p:outputLabel for="cpf" value="CPF" />
 				<p:inputMask mask="999.999.999-99" id="cpf"
-					value="#{cadastroBean.cpf}"> 
+					value="#{cadastroBean.cpf}">
 				</p:inputMask>
 				<p:messages for="cpf" />
 				<p:outputLabel value="Idade" />
@@ -35,6 +35,13 @@
 					<f:validateLongRange minimum="0" maximum="120" />
 				</p:inputText>
 				<p:messages for="idade" />
+				<p:outputLabel value="Qualificação" for="qualificacao" />
+				<p:rating id="qualificacao" value="#{cadastroBean.estrelas}" />
+				<p:messages for="qualificacao" />
+				<p:outputLabel for="nascimento" value="Data de Nascimento" />
+				<p:calendar id="nascimento"
+					value="#{cadastroBean.dataNascimento}" />
+				<p:messages for="nascimento" />
 
 				<p:commandButton action="#{cadastroBean.validar}" value="Cadastrar" />
 			</h:panelGrid>
